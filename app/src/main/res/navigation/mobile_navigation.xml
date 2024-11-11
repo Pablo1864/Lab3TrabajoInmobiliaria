@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/mapaFragment">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.inmueble.InmuebleFragment"
+        android:label="@string/Inmuebles"
+        tools:layout="@layout/fragment_inmueble" >
+        <action
+            android:id="@+id/action_nav_home_to_detalleInmuebleFragment"
+            app:destination="@id/detalleInmuebleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.perfil.PerfilFragment"
+        android:label="@string/Perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/detalleInmuebleFragment"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.inmueble.DetalleInmuebleFragment"
+        android:label="Detalle del inmueble"
+        tools:layout="@layout/fragment_detalle_inmueble" >
+        <action
+            android:id="@+id/action_detalleInmuebleFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarInmuebleFragment"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.inmueble.AgregarInmuebleFragment"
+        android:label="Añadir un inmueble"
+        tools:layout="@layout/fragment_agregar_inmueble" >
+        <action
+            android:id="@+id/action_agregarInmuebleFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.inquilino.InquilinoFragment"
+        android:label="Inmuebles alquilados"
+        tools:layout="@layout/fragment_inquilino" >
+        <action
+            android:id="@+id/action_InquilinoFragment_to_detalleInquilinoFragment"
+            app:destination="@id/detalleInquilinoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleInquilinoFragment"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.inquilino.DetalleInquilinoFragment"
+        android:label="Detalle del inquilino"
+        tools:layout="@layout/fragment_detalle_inquilino" >
+        <action
+            android:id="@+id/action_detalleInquilinoFragment_to_InquilinoFragment"
+            app:destination="@id/nav_gallery" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleContratoFragment"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.contrato.DetalleContratoFragment"
+        android:label="Detalles del contrato"
+        tools:layout="@layout/fragment_detalle_contrato" >
+        <action
+            android:id="@+id/action_detalleContratoFragment_to_contratoFragment"
+            app:destination="@id/contratoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contratoFragment"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.contrato.ContratoFragment"
+        android:label="Contratos"
+        tools:layout="@layout/fragment_contrato" >
+        <action
+            android:id="@+id/action_contratoFragment_to_detalleContratoFragment"
+            app:destination="@id/detalleContratoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.pagos.PagosFragment"
+        android:label="Pagos"
+        tools:layout="@layout/fragment_pagos" />
+    <fragment
+        android:id="@+id/salirFragment"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.salir.SalirFragment"
+        android:label="Salir"
+        tools:layout="@layout/fragment_salir" />
+
+    <fragment
+        android:id="@+id/mapaFragment"
+        android:name="com.app.lab3trabajoinmobiliaria.ui.mapa.MapaFragment"
+        android:label="Ubicacion de la inmobiliaria"
+        tools:layout="@layout/fragment_home" />
+
+
+</navigation>
